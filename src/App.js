@@ -1,23 +1,57 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./components/Home";
+import "./App.css"
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div>
+
+        <h1 className="counter">0</h1>
+
+        <div className="overlay">
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+          <div className="bar"></div>
+        </div>
+        
+        <div className="container">
+
+          <nav>
+            <div>
+              <a href="#">About</a>
+              <a href="#">Gurugram University</a>
+            </div>
+            <div>
+              <a href="#">CodeRush '24</a>
+            </div>
+          </nav>
+
+          <header>
+            <h1>C</h1>
+            <h1>o</h1>
+            <h1>d</h1>
+            <h1>e</h1>
+            <h1>R</h1>
+            <h1>u</h1>
+            <h1>s</h1>
+            <h1>h</h1>
+          </header>
+
+          <div className="hero">
+             <img src={require("../src/images/hero.jpeg")}/>
+          </div>
+
+        </div>
+
+      </div>
+      <Home/>
     </div>
   );
 }
