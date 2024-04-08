@@ -1,6 +1,7 @@
-import Home from "./components/Home";
 import { useRef, useState,useEffect } from "react";
 import "./App.css"
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 function App() {
 
@@ -10,6 +11,35 @@ function App() {
   useEffect(()=> {
     startLoader()
   }, [])
+
+  useGSAP(() => {
+    gsap.to(".counter", 0.25, {delay:1.75, opacity:0})
+
+    gsap.to(".bar",1.5,{
+      delay:1.75,
+      height:0,
+      stagger:{
+        amount:0.5
+      },
+      ease:"power4.inOut"
+    })
+
+    gsap.from(".CodeR", 1.5, {
+      delay:1.75,
+      y:400, 
+      stagger: {
+        amount:0.5
+      },
+      ease:"power4.inOut"
+    })
+
+    gsap.from(".hero", 2, {
+      delay:2.25,
+      y:700,
+      ease:"power4.inOut"
+    })
+  })
+  
 
   const startLoader = () => {
     const intervalId = setInterval(() => {
@@ -50,22 +80,24 @@ function App() {
           <nav>
             <div>
               <a href="#">About</a>
-              <a href="#">Gurugram University</a>
             </div>
             <div>
               <a href="#">CodeRush '24</a>
             </div>
+            <div>
+              <a href="#">Gurugram University</a>
+            </div>
           </nav>
 
           <header>
-            <h1>C</h1>
-            <h1>o</h1>
-            <h1>d</h1>
-            <h1>e</h1>
-            <h1>R</h1>
-            <h1>u</h1>
-            <h1>s</h1>
-            <h1>h</h1>
+            <h1 className="CodeRush">C</h1>
+            <h1 className="CodeRush">o</h1>
+            <h1 className="CodeRush">d</h1>
+            <h1 className="CodeRush">e</h1>
+            <h1 className="CodeRush">R</h1>
+            <h1 className="CodeRush">u</h1>
+            <h1 className="CodeRush">s</h1>
+            <h1 className="CodeRush">h</h1>
           </header>
 
           <div className="hero">
@@ -75,7 +107,6 @@ function App() {
         </div>
 
       </div>
-      <Home/>
     </div>
   );
 }
