@@ -24,7 +24,7 @@ function App() {
       ease:"power4.inOut"
     })
 
-    gsap.from(".CodeR", 1.5, {
+    gsap.from(".CodeRush", 1.75, {
       delay:1.75,
       y:400, 
       stagger: {
@@ -50,7 +50,6 @@ function App() {
       });
     }, 100); // Update every 0.1 second (100 milliseconds)
 
-    // Stop the interval once currentValue reaches 100
     if (currentValue >= 100) {
       clearInterval(intervalId);
     }
